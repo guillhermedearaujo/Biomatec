@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    
+    <!-- Link para o Visual -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para o Comportamento (Interatividade) -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    
+
+    <header>
+    <div class="header-container">
+        <!-- 1. Botão no canto esquerdo -->
+        <button id="btn-hamburger" class="hamburger" aria-label="Abrir menu">
+            &#9776;
+        </button>
+
+        <!-- 2. Logo ao lado do botão -->
+        <div class="logo">
+            <h1>Biomatec</h1>
+        </div>
+
+        <!-- 3. Menu oculto -->
+        <nav id="menu-dropdown" class="menu-dropdown">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Faça Parte</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <form action="/enviar-cadastro" method="POST">
+            
+            <fieldset>
+                <legend>Seus Dados Pessoais e Contato</legend>
+
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- CAMPO CPF COM PATTERN -->
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" 
+                           placeholder="000.000.000-00"
+                           pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" 
+                           title="Digite o CPF no formato: 000.000.000-00" required>
+                </div>
+
+                <!-- CAMPO TELEFONE COM PATTERN -->
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" 
+                           placeholder="(11) 90000-0000"
+                           pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" 
+                           title="Digite o telefone no formato: (99) 99999-9999" required>
+                </div>
+
+                <!-- CAMPO CEP COM PATTERN -->
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" 
+                           placeholder="00000-000"
+                           pattern="[0-9]{5}-[0-9]{3}" 
+                           title="Digite o CEP no formato: 00000-000" required>
+                </div>
+
+                <div>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" 
+           pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}" 
+           title="A senha deve ter pelo menos 8 caracteres, incluindo no mínimo uma letra maiúscula, um número e um caractere especial." 
+           required>
+</div>
+            </fieldset>
+
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Biomatec. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

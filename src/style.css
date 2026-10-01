@@ -1,0 +1,305 @@
+:root {
+    /* ===============================
+       SISTEMA DE CORES
+       =============================== */
+    /* Primárias (Identidade Biomatec - Tecnologia e Natureza) */
+    --color-primary: #15803d;      /* Verde folha - Ações principais e botões */
+    --color-primary-dark: #166534; /* Verde escuro - Hover e foco (acessibilidade) */
+    
+    /* Neutras (Leitura e Estrutura) */
+    --color-neutral-900: #111827;  /* Preto suave - Textos principais (h1, h2, p) */
+    --color-neutral-600: #4b5563;  /* Cinza escuro - Textos secundários e legends */
+    --color-neutral-200: #e5e7eb;  /* Cinza claro - Bordas de formulários e fieldsets */
+    --color-neutral-50:  #f9fafb;  /* Branco gelo - Fundo principal da página */
+    --color-white:       #ffffff;  /* Branco puro - Fundo de cards e botões de texto */
+
+    /* ===============================
+       ESCALA TIPOGRÁFICA (Base 16px)
+       =============================== */
+    --text-xs: 0.875rem; /* 14px - Rodapés, placeholders e mensagens de erro */
+    --text-sm: 1rem;     /* 16px - Corpo de texto padrão (p, label, input) */
+    --text-md: 1.25rem;  /* 20px - Subtítulos de seções (h3) e legends */
+    --text-lg: 1.5rem;   /* 24px - Títulos de seções (h2) */
+    --text-xl: 2.25rem;  /* 36px - Títulos principais da página (h1) */
+
+    /* ===============================
+       SISTEMA DE ESPAÇAMENTO (Múltiplos de 8px)
+       =============================== */
+    --space-xs: 0.5rem;  /* 8px  - Entre labels e inputs */
+    --space-sm: 1rem;    /* 16px - Padding de botões e espaçamento de parágrafos */
+    --space-md: 1.5rem;  /* 24px - Margem entre grupos de formulário (divs) */
+    --space-lg: 2rem;    /* 32px - Padding interno de seções e fieldsets */
+    --space-xl: 4rem;    /* 64px - Margem entre seções principais (section para section) */
+}
+
+/* ===============================
+   RESET E BASE
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-900);
+    line-height: 1.6;
+}
+
+/* ===============================
+   TIPOGRAFIA
+   =============================== */
+h1 { font-size: var(--text-xl); margin-bottom: var(--space-sm); color: var(--color-primary-dark); }
+h2 { font-size: var(--text-lg); margin-bottom: var(--space-sm); }
+h3 { font-size: var(--text-md); margin-bottom: var(--space-xs); }
+p  { font-size: var(--text-md); margin-bottom: var(--space-sm); color: var(--color-neutral-600); }
+
+/* ===============================
+   ESTRUTURA E ESPAÇAMENTO
+   =============================== */
+header, main, footer {
+    padding: var(--space-lg) var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--color-neutral-200);
+    margin-bottom: var(--space-lg);
+}
+
+section {
+    margin-bottom: var(--space-xl);
+}
+
+/* ===============================
+   FORMULÁRIOS (Página de Cadastro)
+   =============================== */
+fieldset {
+    border: 1px solid var(--color-neutral-200);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    background-color: var(--color-white);
+    margin-bottom: var(--space-lg);
+}
+
+legend {
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    padding: 0 var(--space-xs);
+}
+
+form div {
+    margin-bottom: var(--space-md);
+}
+
+label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+}
+
+input, textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    font-size: var(--text-sm);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    font-weight: bold;
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.imagem-empresa {
+    width: 100%;
+    height: auto; /* Garante que a proporção seja mantida */
+}
+
+.foto-projeto {
+    width: 100%;
+    height: auto; /* Garante que a proporção seja mantida */
+}
+
+/* ===============================
+   LINKS (<a>)
+   =============================== */
+   
+/* 1. Estilo padrão para links no meio de textos */
+a {
+    color: var(--color-primary);
+    text-decoration: none; /* Remove o sublinhado azul padrão */
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* O que acontece quando o mouse passa por cima (Hover) */
+a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline; /* Devolve o sublinhado para dar feedback visual */
+}
+
+/* O que acontece quando o usuário navega pelo teclado (Acessibilidade) */
+a:focus {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 4px;
+}
+
+/* ===============================
+   LINKS TIPO BOTÃO (Call to Action)
+   =============================== */
+   
+/* 2. Classe para transformar links em botões clicáveis */
+.btn {
+    display: inline-block; /* Permite aplicar margin e padding corretamente */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white); /* Garante que o texto continue branco */
+    text-decoration: none;
+    transform: translateY(-2px); /* Cria um leve efeito de elevação */
+}
+
+/* ===============================
+   MENU CENTRALIZADO
+   =============================== */
+
+/* 1. Remove margens/paddings padrão que empurram a lista para a esquerda */
+nav ul {
+    list-style-type: none; /* Tira as "bolinhas" */
+    margin: 0;
+    padding: 0;
+    
+    /* 2. O segredo da centralização moderna */
+    display: flex;         /* Transforma a lista em uma linha flexível */
+    justify-content: center; /* Centraliza todos os itens da linha */
+    gap: var(--space-md);  /* Espaço entre os links */
+}
+
+/* 3. Apenas estética dos links (opcional) */
+nav a {
+    text-decoration: none;
+    color: var(--color-neutral-600);
+    font-weight: 600;
+    font-size: var(--text-md);
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Estilização da Divisória */
+.divisor-projetos {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-neutral-200); /* Usa o cinza claro do seu sistema */
+    margin: var(--space-xl) 0; /* Aplica o espaçamento macro (64px) acima e abaixo */
+}
+
+/* Ajuste sutil para os links estilo blog (opcional) */
+.card-projeto a {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    font-size: var(--text-sm);
+}
+
+/* Container alinhado à esquerda com Flexbox */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Força tudo para a esquerda */
+    gap: var(--space-md); /* Espaço entre o botão hambúrguer e o logo */
+    position: relative;
+}
+
+/* Limpa o visual do botão (tira o fundo verde herdado) */
+.hamburger {
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-dark);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: auto; /* Impede que o botão ocupe a tela toda */
+}
+
+/* Garante que o hover não mude o botão */
+.hamburger:hover {
+    background-color: transparent;
+}
+
+/* A caixa do menu Dropdown */
+.menu-dropdown {
+    display: none; /* OBRIGATÓRIO: Mantém os links ocultos inicialmente */
+    position: absolute;
+    top: 100%; /* Abre logo abaixo da barra do cabeçalho */
+    left: 0; /* Alinha o dropdown à esquerda */
+    background-color: var(--color-white);
+    border: 1px solid var(--color-neutral-200);
+    width: 220px;
+    z-index: 1000;
+}
+
+/* Classe ativada pelo seu script.js para mostrar o menu */
+.menu-dropdown.ativo {
+    display: block;
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-neutral-900);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+/* Remove a linha separadora do último link */
+.menu-dropdown li:last-child a {
+    border-bottom: none;
+}
+
+/* Remoção explícita do efeito Hover no menu, conforme solicitado */
+.menu-dropdown a:hover {
+    color: var(--color-neutral-900); /* Mantém a mesma cor */
+    background-color: transparent; /* Não muda o fundo */
+}
